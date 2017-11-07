@@ -1,14 +1,14 @@
 ---
 swagger: "2.0"
 info:
-  description: "Patient API"
-  version: "1.0.0"
-  title: "Patient API"
+  description: "SHR REST Client"
+  version: "0.0.1"
+  title: "SHR REST Client"
 host: "localhost:3001"
 basePath: "/api"
 tags:
-- name: "patient"
-  description: "Everything about patient"
+- name: "shr_rest_client"
+  description: "Client for SHR Rest Service"
 schemes:
 - "http"
 paths:

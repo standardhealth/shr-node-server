@@ -1,7 +1,7 @@
 {
-  "name": "patient-api",
-  "version": "1.0.0",
-  "description": "Patient API",
+  "name": "shr-rest-client",
+  "version": "0.0.1",
+  "description": "SHR REST Client",
   "main": "index.js",
   "scripts": {
 	"prestart": "npm install",
