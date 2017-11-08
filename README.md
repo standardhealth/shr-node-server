@@ -4,13 +4,19 @@ This project is a NodeJS server implementation of the shr-rest-api.
 
 ## Running the server
 In order to install all dependencies, run the following command from the `nodejs-server-server` directory:
-```npm install
+```
+npm install
 ```
 
 In order to start the server, run the following command from within the `nodejs-server-server` directory:
 
 ```
-node index.js
+npm start
+```
+
+The server will be running on port 3001. All routes will be available at `/api`. For example, to get the demo hardcoded patient by id, go to:
+```
+http://localhost:3001/api/patient/-1
 ```
 
 ## Generating Code
