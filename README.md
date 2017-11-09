@@ -22,7 +22,7 @@ http://localhost:3001/api/patient/-1
 ## Generating Code
 Code in the `nodejs-server-server` directory was generated using the Swagger Online Editor (https://editor.swagger.io/).
 
-Code in the `fluxImplementation` directory are files used specifically in the Flux Project, which is a part of the Standard Health Record Collaborative (see https://github.com/standardhealth/flux).
+Code in the `nodejs-server-server/fluxImplementation` directory and the 'nodesjs-server-server/dataacces" directory are files used specifically in the Flux Project, which is a part of the Standard Health Record Collaborative (see https://github.com/standardhealth/flux). Make sure to save these 2 directories before re generating the server and copy them back in. 
 
 If an updated swagger.json or swagger.yaml file is defined, a new NodeJS implementation will need to be generated. It can be generated using the Swagger Online Editor, or other Swagger tools. The new server implementation should replace the `nodejs-server-server` directory.
 
