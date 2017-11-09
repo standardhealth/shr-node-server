@@ -1,5 +1,5 @@
 'use strict';
-const patientHandler = require('../../fluxImplementation/defaultHandlers');
+const patientHandler = require('../fluxImplementation/defaultHandlers');
 
 exports.getPatientById = function(args, res, next) {
   /**

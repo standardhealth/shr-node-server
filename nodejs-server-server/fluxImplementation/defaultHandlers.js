@@ -7,29 +7,16 @@
  * 2. In each function, add the appropriate function from this file to execute the desired outcome, passing in
  * all parameters. See each function for the appropriate line to add.
  */
-const DataAccess = require('../dataaccess/DataAccess');
-
-const DEMO_PATIENT_ID = "-1";
-
-const dataSource = 'HardCodedReadOnlyDataSource';
-
-var dataAccess = null;
-
-if (!dataSource) {
-    dataAccess = new DataAccess("HardCodedReadOnlyDataSource");
-} else {
-    dataAccess = new DataAccess(dataSource);
-}
-
-const hardCodedPatient = this.dataAccess.getPatient(DEMO_PATIENT_ID);
-// let patient = this.dataAccess.getPatient(DataAccess.DEMO_PATIENT_ID);
-
-// const hardCodedPatient = require('./HardCodedPatient.json');
-
+import DataAccess from '../dataaccess/DataAccess';
+import Lang from 'lodash';
 
 // In DefaultService.js in getPatientById(), add: patientHandler.getPatientById(args, res, next);
 function getPatientById(args, res, next) {
-    if (args.shrId.value === DEMO_PATIENT_ID) {
+
+    const da = new DataAccess('HardCodedReadOnlyDataSource');
+    const hardCodedPatient = da.getPatient(args.shrId.value);
+
+    if(!Lang.isUndefined(hardCodedPatient && !Lang.isNull(hardCodedPatient))) {
         res.write(JSON.stringify(hardCodedPatient));
     } else {
         res.statusCode = 404;
