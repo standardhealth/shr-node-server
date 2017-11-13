@@ -3,10 +3,12 @@ This project is a NodeJS server implementation of the shr-rest-api.
 
 
 ## Running the server
-In order to install all dependencies, run the following command from the `nodejs-server-server` directory:
+In order to install all dependencies, run the following command from the `./shr-node-server` directory and the `./shr-node-server/nodejs-server-server` directory:
 ```
 npm install
 ```
+
+Run the same command from inside
 
 In order to start the server, run the following command from within the `nodejs-server-server` directory:
 
@@ -20,12 +22,11 @@ http://localhost:3001/api/patient/-1
 ```
 
 ## Generating Code
-Code in the `nodejs-server-server` directory was generated using the Swagger Online Editor (https://editor.swagger.io/).
+Code in the `./shr-node-server/nodejs-server-server` directory was generated using the Swagger Online Editor (https://editor.swagger.io/).
 
-Code in the `nodejs-server-server/fluxImplementation` directory and the 'nodesjs-server-server/dataacces" directory are files used specifically in the Flux Project, which is a part of the Standard Health Record Collaborative (see https://github.com/standardhealth/flux). Make sure to save these 2 directories before re generating the server and copy them back in. 
+Code in the `./shr-node-server/fluxImplementation` directory and the './shr-node-server/dataacces" directory are files used specifically in the Flux Project, which is a part of the Standard Health Record Collaborative (see https://github.com/standardhealth/flux)
 
-Package.json, located in shr-node-server/, was updated to include the following packages. Make sure to either save the package.json file before re generating or server or re install the packages:
-
+Package.json, located in shr-node-server/ includes the below packages needed for es6 to es5 conversion. There is another package.json file inside nodejs-server-server that is auto generated
 1. babel-cli
 2. babel-core
 3. babel-plugin-transform-class-properties
