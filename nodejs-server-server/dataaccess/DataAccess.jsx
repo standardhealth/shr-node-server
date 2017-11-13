@@ -2,7 +2,7 @@ import HardCodedReadOnlyDataSource from './HardCodedReadOnlyDataSource';
 
 export default class DataAccess {
     static DEMO_PATIENT_ID() {
-        return -1
+        return "-1";
     };
     
     constructor(dataSourceName) {
