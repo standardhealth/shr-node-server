@@ -24,6 +24,20 @@ Code in the `nodejs-server-server` directory was generated using the Swagger Onl
 
 Code in the `nodejs-server-server/fluxImplementation` directory and the 'nodesjs-server-server/dataacces" directory are files used specifically in the Flux Project, which is a part of the Standard Health Record Collaborative (see https://github.com/standardhealth/flux). Make sure to save these 2 directories before re generating the server and copy them back in. 
 
+Package.json, located in shr-node-server/, was updated to include the following packages. Make sure to either save the package.json file before re generating or server or re install the packages:
+
+1. babel-cli
+2. babel-core
+3. babel-plugin-transform-class-properties
+4. babel-plugin-transform-es2015-destructuring
+5. babel-plugin-transform-es2015-modules-commonjs
+6. babel-plugin-transform-object-reset-spread
+7. babel-polyfill
+8. babel-preset-es2015
+9. es6-shim
+10. react
+
+
 If an updated swagger.json or swagger.yaml file is defined, a new NodeJS implementation will need to be generated. It can be generated using the Swagger Online Editor, or other Swagger tools. The new server implementation should replace the `nodejs-server-server` directory.
 
 ## Manual Edits to Generated Code
