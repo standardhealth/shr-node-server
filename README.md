@@ -10,7 +10,7 @@ npm install
 
 Run the same command from inside
 
-In order to start the server, run the following command from within the `nodejs-server-server` directory:
+In order to start the server, run the following command from within the `shr-node-server` directory:
 
 ```
 npm start
@@ -25,19 +25,6 @@ http://localhost:3001/api/patient/-1
 Code in the `./shr-node-server/nodejs-server-server` directory was generated using the Swagger Online Editor (https://editor.swagger.io/).
 
 Code in the `./shr-node-server/fluxImplementation` directory and the './shr-node-server/dataacces" directory are files used specifically in the Flux Project, which is a part of the Standard Health Record Collaborative (see https://github.com/standardhealth/flux)
-
-Package.json, located in shr-node-server/ includes the below packages needed for es6 to es5 conversion. There is another package.json file inside nodejs-server-server that is auto generated
-1. babel-cli
-2. babel-core
-3. babel-plugin-transform-class-properties
-4. babel-plugin-transform-es2015-destructuring
-5. babel-plugin-transform-es2015-modules-commonjs
-6. babel-plugin-transform-object-reset-spread
-7. babel-polyfill
-8. babel-preset-es2015
-9. es6-shim
-10. react
-
 
 If an updated swagger.json or swagger.yaml file is defined, a new NodeJS implementation will need to be generated. It can be generated using the Swagger Online Editor, or other Swagger tools. The new server implementation should replace the `nodejs-server-server` directory.
 
