@@ -4,7 +4,7 @@
   "description": "SHR Node Server",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node --presets es2015 --plugins transform-class-properties,transform-es2015-destructuring,transform-object-rest-spread ./index.js"
+    "start": "babel-node --presets es2015 --plugins transform-class-properties,transform-es2015-destructuring,transform-object-rest-spread ./nodejs-server-server/index.js"
   },
   "keywords": [
     "swagger"
