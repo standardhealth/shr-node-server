@@ -3,12 +3,14 @@ This project is a NodeJS server implementation of the shr-rest-api.
 
 
 ## Running the server
-In order to install all dependencies, run the following command from the `nodejs-server-server` directory:
+In order to install all dependencies, run the following command from the `./shr-node-server` directory and the `./shr-node-server/nodejs-server-server` directory:
 ```
 npm install
 ```
 
-In order to start the server, run the following command from within the `nodejs-server-server` directory:
+Run the same command from inside
+
+In order to start the server, run the following command from within the `shr-node-server` directory:
 
 ```
 npm start
@@ -20,9 +22,9 @@ http://localhost:3001/api/patient/-1
 ```
 
 ## Generating Code
-Code in the `nodejs-server-server` directory was generated using the Swagger Online Editor (https://editor.swagger.io/).
+Code in the `./shr-node-server/nodejs-server-server` directory was generated using the Swagger Online Editor (https://editor.swagger.io/).
 
-Code in the `fluxImplementation` directory are files used specifically in the Flux Project, which is a part of the Standard Health Record Collaborative (see https://github.com/standardhealth/flux).
+Code in the `./shr-node-server/fluxImplementation` directory and the './shr-node-server/dataacces" directory are files used specifically in the Flux Project, which is a part of the Standard Health Record Collaborative (see https://github.com/standardhealth/flux)
 
 If an updated swagger.json or swagger.yaml file is defined, a new NodeJS implementation will need to be generated. It can be generated using the Swagger Online Editor, or other Swagger tools. The new server implementation should replace the `nodejs-server-server` directory.
 
