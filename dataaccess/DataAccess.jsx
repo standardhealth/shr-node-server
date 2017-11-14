@@ -1,8 +1,9 @@
 import HardCodedReadOnlyDataSource from './HardCodedReadOnlyDataSource';
+import MongoDataSource from '../fluxImplementation/MongoDataSource';
 
 export default class DataAccess {
     static DEMO_PATIENT_ID() {
-        return "-1";
+        return "788dcbc3-ed18-470c-89ef-35ff91854c7d";
     };
     
     constructor(dataSourceName) {
@@ -11,6 +12,8 @@ export default class DataAccess {
             this.dataSource = new HardCodedReadOnlyDataSource();
         // } else if (dataSourceName === 'RestApiDataSource') {
         //     this.dataSource = new RestApiDataSource();
+        } else if(dataSourceName === 'MongoDataSource'){
+            this.dataSource = new MongoDataSource();
         } else {
             throw new Error("Unrecognized data source class name: " + dataSourceName);
         }

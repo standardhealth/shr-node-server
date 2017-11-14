@@ -10,6 +10,6 @@ exports.getPatientById = function(args, res, next) {
    * no response value expected for this operation
    **/
   patientHandler.getPatientById(args, res, next);
-  res.end();
+  //res.end();
 }
 

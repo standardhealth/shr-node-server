@@ -10,6 +10,16 @@ npm install
 
 Run the same command from inside
 
+This server optionally uses MongoDB as a backend. 
+
+Ensure that [MongoDB](https://www.mongodb.com/download-center#community) is installed. Detailed MongoDB installation instructions are available for [Windows](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/) and [Mac OS X](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/). It is recommended to configure MongoDB to start at boot. The Windows page includes instructions to create a Windows service. On OS X, it is recommended to install with brew and follow the instructions to have launchd start it at login.
+
+Run the following script to insert the hard coded patient data into MongoDB:
+
+For Windows: insertHardCodedPatient.bat
+
+For Mac / Unix: insertHardCodedPatient.sh
+
 In order to start the server, run the following command from within the `shr-node-server` directory:
 
 ```
