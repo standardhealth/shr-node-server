@@ -16,9 +16,7 @@ Ensure that [MongoDB](https://www.mongodb.com/download-center#community) is inst
 
 Run the following script to insert the hard coded patient data into MongoDB:
 
-For Windows: insertHardCodedPatient.bat
-
-For Mac / Unix: insertHardCodedPatient.sh
+node insertHardCodedPatient.js
 
 In order to start the server, run the following command from within the `shr-node-server` directory:
 
