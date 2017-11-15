@@ -26,7 +26,7 @@ npm start
 
 The server will be running on port 3001. All routes will be available at `/api`. For example, to get the demo hardcoded patient by id, go to:
 ```
-http://localhost:3001/api/patient/-1
+http://localhost:3001/api/patient/788dcbc3-ed18-470c-89ef-35ff91854c7d
 ```
 
 ## Generating Code
