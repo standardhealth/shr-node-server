@@ -3,12 +3,10 @@ This project is a NodeJS server implementation of the shr-rest-api.
 
 
 ## Running the server
-In order to install all dependencies, run the following command from the `./shr-node-server` directory and the `./shr-node-server/nodejs-server-server` directory:
+In order to install all dependencies, run the following command from inside the `./shr-node-server` directory and the `./shr-node-server/nodejs-server-server` directory:
 ```
 npm install
 ```
-
-Run the same command from inside
 
 This server optionally uses MongoDB as a backend. 
 
