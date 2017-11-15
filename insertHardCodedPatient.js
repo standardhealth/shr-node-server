@@ -13,8 +13,10 @@ dbPromise.then(function(database) {
     var result = collection.insertMany(HardCodedPatient);
     result.then(function(result) {
         console.log(result.insertedCount + " items inserted.");
+        process.exit();
     });
 }, function(err) {
-  console.log(err); 
+  console.log(err);
+  process.exit();
 });
 

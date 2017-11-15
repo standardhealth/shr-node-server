@@ -1,5 +1,5 @@
 import HardCodedReadOnlyDataSource from './HardCodedReadOnlyDataSource';
-import MongoDataSource from '../fluxImplementation/MongoDataSource';
+import MongoDataSource from './MongoDataSource';
 
 export default class DataAccess {
     static DEMO_PATIENT_ID() {
