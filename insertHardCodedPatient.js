@@ -9,6 +9,9 @@ var result = null;
 var database;
 var dbPromise = MongoClient.connect("mongodb://" + mongoHost + ":" + mongoPort + "/" + databaseName);
 dbPromise.then(function(database) {
+    database.collection('entries').drop(function(err, reply){
+        // Ignore error when dropping a database that doesn't exist
+    });
     var collection = database.collection('entries');
     var result = collection.insertMany(HardCodedPatient);
     result.then(function(result) {
