@@ -9,13 +9,16 @@ var result = null;
 var database;
 var dbPromise = MongoClient.connect("mongodb://" + mongoHost + ":" + mongoPort + "/" + databaseName);
 dbPromise.then(function(database) {
-    database.collection('entries').drop(function(err, reply){
-        // Ignore error when dropping a database that doesn't exist
-    });
     var collection = database.collection('entries');
-    var result = collection.insertMany(HardCodedPatient);
-    result.then(function(result) {
-        console.log(result.insertedCount + " items inserted.");
+    // Remove any existing SHR entries for the demo patient
+    var dropResult = collection.deleteMany({shrId: {$eq: "788dcbc3-ed18-470c-89ef-35ff91854c7d"}});
+    dropResult.then(function(result) {
+        console.log(result.deletedCount + " existing SHR entries removed");
+    });
+    // Insert the up to date SHR entries for the demo patient
+    var insertResult = collection.insertMany(HardCodedPatient);
+    insertResult.then(function(result) {
+        console.log(result.insertedCount + " up-to-date SHR entries inserted.");
         process.exit();
     });
 }, function(err) {
