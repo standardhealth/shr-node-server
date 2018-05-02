@@ -18,8 +18,11 @@ export default class MongoDataSource extends IDataSource {
             var dbPromise = MongoClient.connect("mongodb://" + mongoHost + ":" + mongoPort + "/" + databaseName);
             return dbPromise.then(function(database) {
                 var collection = database.collection('entries');
-                var result = collection.find({shrId: id}).toArray();
+                var result = collection.find({ShrId: id}).toArray();
                 return result.then(function(result2) {
+                    result2.forEach(entry => {
+                        delete entry._id; // don't send Mongo id
+                    });
                     return result2;
                 });
             }, function(err) {
@@ -41,8 +44,22 @@ export default class MongoDataSource extends IDataSource {
         console.log("creating new patients is not implemented yet in MongoDB data source.");
     }
     
-    savePatient(patient) {
-        console.log("saving of patients is not implemented yet in MongoDB data source.");
+    savePatient(entries) {
+        var database;
+        var dbPromise = MongoClient.connect("mongodb://" + mongoHost + ":" + mongoPort + "/" + databaseName);
+        return dbPromise.then(function(database) {
+            var collection = database.collection('entries');
+            for (const entry of entries) {
+                collection.updateOne(
+                    { EntryId: entry.EntryId },
+                    { $set: entry },
+                    { upsert: true }
+                );
+            }
+            return 'Successfully saved patient data';
+        }).catch(function(err) {
+            return err;
+        });
     }
     
 }

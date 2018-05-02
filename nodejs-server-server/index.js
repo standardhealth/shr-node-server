@@ -3,6 +3,7 @@
 var fs = require('fs'),
     path = require('path'),
     http = require('http');
+var bodyParser = require('body-parser');
 
 var app = require('connect')();
 var swaggerTools = require('swagger-tools');
@@ -19,6 +20,9 @@ var options = {
 // The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
 var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
+
+app.use(bodyParser.json({limit: '1mb'}));
+app.use(bodyParser.urlencoded({limit: '1mb', extended: true}));
 
 // Add headers - NOTE: These were manually added. Using swagger-codegen tool will not replace a modified index.js file
 app.use(function (req, res, next) {

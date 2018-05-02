@@ -5,7 +5,7 @@ import hardCodedPatient from './HardCodedPatient.json';
 class HardCodedReadOnlyDataSource extends IDataSource {
     getPatient(id) {
 
-        if (id === DataAccess.DEMO_PATIENT_ID) {
+        if (id === DataAccess.DEMO_PATIENT_ID()) {
             return hardCodedPatient;
         } else {
             console.error("loading of patients other than the hard-coded demo patient is not implemented in hard-coded read only data source.");

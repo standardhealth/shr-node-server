@@ -60,3 +60,12 @@ app.use(function (req, res, next) {
   next();
 });
 ```
+
+## Request Size
+The maximum request size can be increased to allow all entries to be sent and stored. In order to do so, add the following lines to the index.js file.
+
+```
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: '1mb'}));
+app.use(bodyParser.urlencoded({limit: '1mb', extended: true}));
+```

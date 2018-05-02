@@ -11,7 +11,7 @@ var dbPromise = MongoClient.connect("mongodb://" + mongoHost + ":" + mongoPort +
 dbPromise.then(function(database) {
     var collection = database.collection('entries');
     // Remove any existing SHR entries for the demo patient
-    var dropResult = collection.deleteMany({shrId: {$eq: "788dcbc3-ed18-470c-89ef-35ff91854c7d"}});
+    var dropResult = collection.deleteMany({ShrId: {$eq: "788dcbc3-ed18-470c-89ef-35ff91854c7d"}});
     dropResult.then(function(result) {
         console.log(result.deletedCount + " existing SHR entries removed");
     });

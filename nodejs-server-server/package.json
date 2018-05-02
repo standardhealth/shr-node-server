@@ -1,11 +1,11 @@
 {
-  "name": "nodejs-server-server",
+  "name": "shr-rest-client",
   "version": "0.0.1",
-  "description": "SHR Node Server",
+  "description": "SHR REST Client",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install",
-    "start": "node index.js"
+	"prestart": "npm install",
+	"start": "node index.js"
   },
   "keywords": [
     "swagger"
