@@ -45,13 +45,17 @@ export default class MongoDataSource extends IDataSource {
     }
     
     savePatient(entries) {
+        var id = null;
+        if (entries.length > 0) {
+            id = entries[0].ShrId;
+        }
         var database;
         var dbPromise = MongoClient.connect("mongodb://" + mongoHost + ":" + mongoPort + "/" + databaseName);
         return dbPromise.then(function(database) {
             var collection = database.collection('entries');
             for (const entry of entries) {
                 collection.updateOne(
-                    { EntryId: entry.EntryId },
+                    { ShrId: id, EntryId: entry.EntryId },
                     { $set: entry },
                     { upsert: true }
                 );
