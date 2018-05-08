@@ -17,6 +17,9 @@ function getPatientById(args, res, next) {
     const da = new DataAccess('MongoDataSource');
     var patientFromDatabase = da.getPatient(args.shrId.value);
     if(!Lang.isUndefined(patientFromDatabase) && !Lang.isNull(patientFromDatabase)) {
+        // Use instead of code below if using HardCodedReadOnlyDataSource
+        // res.write(JSON.stringify(patientFromDatabase));
+        // res.end();
         patientFromDatabase.then(function(result) {
             res.write(JSON.stringify(result));
             res.end();
@@ -28,6 +31,21 @@ function getPatientById(args, res, next) {
     }
 }
 
+// In DefaultService.js in updatePatientRecord(), replace res.end() with: patientHandler.updatePatient(args, res, next);
+function updatePatient(args, res, next) {
+  const da = new DataAccess('MongoDataSource');
+  const entries = args.patient.value;
+  const savedMessage = da.savePatient(entries);
+  savedMessage.then(function(result) {
+      console.log(result)
+      res.end();
+  }).catch(function(err) {
+      console.log(err)
+      res.end();
+  });
+}
+
 module.exports = {
-    getPatientById
+    getPatientById,
+    updatePatient
 };
